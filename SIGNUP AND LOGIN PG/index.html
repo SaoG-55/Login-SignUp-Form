@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign In and Sign Up Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css"> 
+	<script src="https://kit.fontawesome.com/0bcbe0ce2c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+<div class="form-box">
+	<h1 id="title">Sign-Up</h1>
+		<form>
+			<div class="input-group">
+				<div class="input-field" id="NameField">
+					<i class="fa-solid fa-users"></i>
+					<input type="text" placeholder="Name">
+				</div>
+
+				<div class="input-field">
+					<i class="fa-solid fa-envelope-open-text"></i>
+					<input type="email" placeholder="Email">
+				</div>
+
+				<div class="input-field">
+					<i class="fa-solid fa-lock"></i>
+					<input type="password" placeholder="Password">
+				</div>
+				<p>Forgot Password: <a href="">Click Here</a></p>
+			</div>
+			<div class="btn-field">
+				<button type="button" id="signupBtn">Sign Up</button>
+				<button type="button" id="loginBtn" class="disable">Log In</button>
+			</div>
+		</form>
+	</div>
+</div>
+<script>
+	
+	let signupBtn=document.getElementById("signupBtn");
+	let loginBtn=document.getElementById("loginBtn");
+	let NameField=document.getElementById("NameField");
+    let title=document.getElementById("title");
+
+    // whenever we will click the signin button it will hide the Name Field and Change the SignUP to SignIn 
+
+    loginBtn.onclick=function()
+    {
+    	NameField.style.maxHeight= "0";
+    	title.innerHTML="Log In";
+		// when loin clicked wth of css maxheight is reduced to 0
+    	signupBtn.classList.add("disable");
+    	loginBtn.classList.remove("disable");
+
+    }
+
+    signupBtn.onclick=function()
+    {
+    	NameField.style.maxHeight= "50px";
+    	title.innerHTML="Sign Up";
+		// when loin clicked wth of css maxheight is reduced to 0
+    	loginBtn.classList.add("disable");
+    	signupBtn.classList.remove("disable");
+
+    }
+
+</script>
+</body>
+</html>
